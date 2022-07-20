@@ -5,7 +5,7 @@ YOLOv7 outperforms all existing state of art object detection models in terms of
 ## Benchmarks
 In terms of speed and accuracy, YOLOv7 has now surpassed all of the known object detectors like [YOLOR](https://github.com/WongKinYiu/yolor), [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [Scaled-YOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4), [YOLOv5](https://github.com/ultralytics/yolov5), [DETR](https://github.com/facebookresearch/detr), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [DINO-5scale-R50](https://github.com/IDEACVR/DINO), [ViT-Adapter-B](https://github.com/czczup/ViT-Adapter). Its speed varies from 5 FPS to 160 FPS and has the highest accuracy 56.8% AP. Also runs on 30FPS + on V100 GPU.
 
-YOLOv7-E6 object detector (56 FPS V100, 55.9% AP) outperforms both transformer-based detector SWINL [Cascade-Mask R-CNN](https://arxiv.org/abs/1906.09756) by 509% in speed and 2% in accuracy, and convolutional based detector [ConvNeXt-XL](https://github.com/facebookresearch/ConvNeXt) Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) by 551% in speed and 0.7% AP in accuracy.
+YOLOv7-E6 object detector (56 FPS V100, 55.9% AP) outperforms both transformer-based detector [SWIN](https://github.com/SwinTransformer/Swin-Transformer-Object-Detection) & [Cascade-Mask R-CNN](https://arxiv.org/abs/1906.09756) by 509% in speed and 2% in accuracy, and convolutional based detector [ConvNeXt-XL](https://github.com/facebookresearch/ConvNeXt) Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) by 551% in speed and 0.7% AP in accuracy.
 
 ## Features
 - Several trainable bag-of-freebies methods have greatly improve the detection accuracy without increasing the inference cost.
