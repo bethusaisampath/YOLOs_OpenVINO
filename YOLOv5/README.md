@@ -42,7 +42,7 @@ pip install -r requirements.txt
 1. There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
 ![YOLOv5 pretrained models](https://user-images.githubusercontent.com/37048080/179829729-3eb55365-fbee-40e1-b4e7-48c22206d2b7.png)
 
-2. Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the YOLOV5s Pytorch Weights(yolov5s.pt) to ONNX weights:
+2. Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights:
 
 ```
 python export.py  --weights yolov5-v6.1/yolov5s.pt  --img 640 --batch 1
