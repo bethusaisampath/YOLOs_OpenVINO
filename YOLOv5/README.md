@@ -81,6 +81,8 @@ wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolov5_demo.py
 ```
+The inference Python script can be found at [yolov5_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolov5_openvino_demo.py)
+
 3. Run the following commands for Inferencing-
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
