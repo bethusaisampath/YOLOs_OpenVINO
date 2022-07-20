@@ -119,9 +119,14 @@ python yolo_openvino_demo.py -i face-demographics-walking.mp4 -m yolov7.xml
 ```
 On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
 
-https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
+https://user-images.githubusercontent.com/37048080/180081087-856039e4-d696-48fd-a27f-c68b76e8b6be.mp4
+
 
 If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#supported-devices) supported by OpenVINO, run the following command and then compare the inference times-
 ```
 python yolo_openvino_demo.py -i road.jpeg -m yolov7.xml -d GPU
 ```
+
+
+
+
