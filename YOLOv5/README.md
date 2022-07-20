@@ -72,7 +72,7 @@ After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v6.1
 model.bin (binary file contains the weights and biases)
 #### YOLOv5 Inference Demo
 
-1. After we generate the IR of YOLOv5 model, use the Python demo(yolov5_demo.py script) for inferencing process of YOLOv5 model.
+1. After we generate the IR of YOLOv5 model, use the Python demo(yolov5_openvino_demo.py script) for inferencing process of YOLOv5 model.
 2. Download some images/videos and object classes for inferencing. Run the following commands one after the other-
 ```
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
