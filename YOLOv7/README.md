@@ -44,27 +44,27 @@ The following components are required-
 
 ## YOLOv5 inferencing using OpenVINO toolkit
 ### Windows/Linux :
-#### Clone the YOLOv5 repository from Github
-1. Clone the latest YOLOv5 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv5 release.
+#### Clone the YOLOv7 repository from Github
+1. Clone the latest YOLOv7 [repository](https://github.com/WongKinYiu/yolov7) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv7 release.
 Running the following commands(one after the other) in the terminal of Windows/Linux-
 ```
-git clone https://github.com/ultralytics/yolov5
-cd yolov5
+git clone https://github.com/WongKinYiu/yolov7
+cd yolov7
 pip install -r requirements.txt
 ```
 
 2. For Windows OS - Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location. Skip this step incase of Linux.
 
 #### Downloading Pytorch weights and Converting them to ONNX weights
-1. There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
-![YOLOv5 pretrained models](https://user-images.githubusercontent.com/37048080/179829729-3eb55365-fbee-40e1-b4e7-48c22206d2b7.png)
+1. There are various pretrained models to start training from. Here we select YOLOv7, the smallest and fastest model available.
+![Yolov7_versions](https://user-images.githubusercontent.com/37048080/180065850-182ffd62-5f80-485a-a604-87a1833d446a.JPG)
 
-2. Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights:
+2. Convert Pytorch Weights to ONNX Weights - The YOLOv7 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv7 Pytorch Weights(yolov7.pt) to ONNX weights:
 
 ```
-python export.py  --weights yolov5-v6.1/yolov5s.pt  --img 640 --batch 1
+python export.py  --weights yolov7.pt  --img 640 --batch 1
 ```
-Then we can get yolov5s.onnx in yolov5-v6.1 folder containing ONNX version of YOLOv5s.
+Then we can get yolov7.onnx containing ONNX version of YOLOv7.
 
 #### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
 1. After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
