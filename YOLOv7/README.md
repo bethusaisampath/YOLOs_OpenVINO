@@ -62,7 +62,7 @@ pip install -r requirements.txt
 2. Convert Pytorch Weights to ONNX Weights - The YOLOv7 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv7 Pytorch Weights(yolov7.pt) to ONNX weights:
 
 ```
-python export.py  --weights yolov7.pt  --img 640 --batch 1
+python models/export.py  --weights yolov7.pt  --img 640 --batch 1
 ```
 Then we can get yolov7.onnx containing ONNX version of YOLOv7.
 
