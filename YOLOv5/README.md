@@ -97,6 +97,11 @@ python yolov5_openvino_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.
 ![Demo_2](https://user-images.githubusercontent.com/37048080/180057962-fc23db43-a90f-4500-a855-5b4e8514fce7.JPG)
 
 ```
+python yolov5_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
+```
+![Demo_4](https://user-images.githubusercontent.com/37048080/180059994-e562f53f-6b2f-45b3-9c8f-3aa02f082c57.JPG)
+
+```
 python yolov5_openvino_demo.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
 ```
 On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
