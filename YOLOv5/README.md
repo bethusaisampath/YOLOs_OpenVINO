@@ -79,23 +79,22 @@ wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
 wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
-wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolov5_demo.py
 ```
 The inference Python script can be found at [yolov5_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolov5_openvino_demo.py)
 
 3. Run the following commands for Inferencing-
 ```
-python yolov5_openvino_demo.py.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
+python yolov5_openvino_demo.py.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
 ```
 ![Demo_1](https://user-images.githubusercontent.com/37048080/180045541-a61dc364-e57b-43b2-bd30-9172310af872.JPG)
 
 ```
-python yolov5_openvino_demo.py.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
+python yolov5_openvino_demo.py.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml
 ```
 ![Demo_2](https://user-images.githubusercontent.com/37048080/179829463-34c89ab4-5f32-44cf-8400-8c5878ff46a5.JPG)
 
 ```
-python yolov5_openvino_demo.py.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
+python yolov5_openvino_demo.py.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
 ```
 On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
 
