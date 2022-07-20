@@ -108,7 +108,8 @@ On the start-up, the application reads command-line parameters and loads a netwo
 
 https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
 
-If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#supported-devices) supported by OpenVINO, run the following command-
+
+If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#supported-devices) supported by OpenVINO, run the following command and then compare the inference times-
 ```
 python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml - d GPU
 ```
