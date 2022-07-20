@@ -97,22 +97,21 @@ wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
 wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
-wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic1.jpg
-wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2.jpg
+wget -O road.jpeg https://miro.medium.com/max/1400/1*v0Bm-HQxWtpbQ0Yq463uqw.jpeg
 wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolo_openvino_demo.py
 ```
 The inference Python script can be found at [yolo_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolo_openvino_demo.py)
 
 3. Run the following commands for Inferencing-
 ```
-python yolo_openvino_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i inference/images/horses.jpg -m yolov5-v6.1/yolov5s.xml
 ```
-![Demo_1](https://user-images.githubusercontent.com/37048080/180057938-5f60a73a-e0fc-432d-9841-a2e9bd9e5966.JPG)
+![Demo_2_Yolov7](https://user-images.githubusercontent.com/37048080/180074619-c2ded978-b353-4b40-b4b1-42a8c09da923.JPG)
 
 ```
-python yolo_openvino_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i road.jpeg -m yolov5-v6.1/yolov5s.xml
 ```
-![Demo_2](https://user-images.githubusercontent.com/37048080/180057962-fc23db43-a90f-4500-a855-5b4e8514fce7.JPG)
+![Demo_1_Yolov7](https://user-images.githubusercontent.com/37048080/180074682-e9451c28-b84c-4b5d-be5e-e6ad11272cd2.JPG)
 
 ```
 python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
