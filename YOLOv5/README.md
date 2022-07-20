@@ -72,7 +72,7 @@ After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v6.1
 model.bin (binary file contains the weights and biases)
 #### YOLOv5 Inference Demo
 
-1. After we generate the IR of YOLOv5 model, use the Python demo(yolov5_openvino_demo.py script) for inferencing process of YOLOv5 model.
+1. After we generate the IR of YOLOv5 model, use the Python demo(yolo_openvino_demo.py script) for inferencing process of YOLOv5 model.
 2. Download some images/videos and object classes for inferencing. Run the following commands one after the other-
 ```
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
@@ -81,28 +81,28 @@ wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic1.jpg
 wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2.jpg
-wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolov5_openvino_demo.py
+wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolo_openvino_demo.py
 ```
-The inference Python script can be found at [yolov5_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolov5_openvino_demo.py)
+The inference Python script can be found at [yolo_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolo_openvino_demo.py)
 
 3. Run the following commands for Inferencing-
 ```
-python yolov5_openvino_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
 ```
 ![Demo_1](https://user-images.githubusercontent.com/37048080/180057938-5f60a73a-e0fc-432d-9841-a2e9bd9e5966.JPG)
 
 ```
-python yolov5_openvino_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml
 ```
 ![Demo_2](https://user-images.githubusercontent.com/37048080/180057962-fc23db43-a90f-4500-a855-5b4e8514fce7.JPG)
 
 ```
-python yolov5_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
 ```
 ![Demo_4](https://user-images.githubusercontent.com/37048080/180059994-e562f53f-6b2f-45b3-9c8f-3aa02f082c57.JPG)
 
 ```
-python yolov5_openvino_demo.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
 ```
 On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
 
