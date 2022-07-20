@@ -85,7 +85,7 @@ wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolov5_demo.py
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
 ```
-![Demo_1](https://user-images.githubusercontent.com/37048080/179829424-48e64714-d755-4fef-970a-6134564b4cf5.JPG)
+![Demo_1](https://user-images.githubusercontent.com/37048080/180045541-a61dc364-e57b-43b2-bd30-9172310af872.JPG)
 
 ```
 python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml --labels yolo_80classes.txt
