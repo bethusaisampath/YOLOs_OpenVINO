@@ -79,6 +79,8 @@ wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
 wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
+wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic1.jpg
+wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2.jpg
 wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolov5_openvino_demo.py
 ```
 The inference Python script can be found at [yolov5_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolov5_openvino_demo.py)
