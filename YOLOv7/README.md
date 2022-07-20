@@ -68,18 +68,19 @@ Then we can get yolov7.onnx containing ONNX version of YOLOv7.
 
 #### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
 1. After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv7 model. There are 3 output nodes in YOLOv7.
-2. Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv7 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
-![YOLOv5_Output_node](https://user-images.githubusercontent.com/37048080/179829580-f2edd2bc-189c-4d70-9e5f-08819a92e1f8.jpg)
+2. Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv7 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_302” on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_302” of convolution node to specify the model optimizer parameters.
+![YOLOv7_ONNX_Netron](https://user-images.githubusercontent.com/37048080/180072286-9f7a185c-efe3-475b-abfa-c51212b9f204.jpg)
+
 
 3. Run the following command to generate the IR of YOLOv7 model(if OpenVINO version >= 2022.1):
 
 ```
-Python C:/Users/"Bethu Sai Sampath"/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov7.onnx --model_name yolov7 -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+Python C:/Users/"Bethu Sai Sampath"/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov7.onnx --model_name yolov7 -s 255 --reverse_input_channels --output Conv_302
 ```
 
 If OpenVINO version < 2022.1, run the following command:
 ```
-Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov7.onnx --model_name yolov7 -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov7.onnx --model_name yolov7 -s 255 --reverse_input_channels --output Conv_302
 ```
 
 Where --input_model defines the pre-trained model, the parameter --model_name is name of the network in generated IR and output .xml/.bin files, -s represents that all input values coming from original network inputs will be divided by this value, --reverse_input_channels is used to switch the input channels order from RGB to BGR (or vice versa), --output represents the name of the output operation of the model. 
