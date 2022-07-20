@@ -95,7 +95,7 @@ model.bin (binary file contains the weights and biases)
 ```
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
-wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
+wget -O fruit-vegetable-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/fruit-and-vegetable-detection.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 wget -O road.jpeg https://miro.medium.com/max/1400/1*v0Bm-HQxWtpbQ0Yq463uqw.jpeg
 wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolo_openvino_demo.py
@@ -104,25 +104,24 @@ The inference Python script can be found at [yolo_openvino_demo.py](https://gith
 
 3. Run the following commands for Inferencing-
 ```
-python yolo_openvino_demo.py -i inference/images/horses.jpg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i inference/images/horses.jpg -m yolov7.xml
 ```
 ![Demo_2_Yolov7](https://user-images.githubusercontent.com/37048080/180074619-c2ded978-b353-4b40-b4b1-42a8c09da923.JPG)
 
 ```
-python yolo_openvino_demo.py -i road.jpeg -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i road.jpeg -m yolov7.xml
 ```
 ![Demo_1_Yolov7](https://user-images.githubusercontent.com/37048080/180074682-e9451c28-b84c-4b5d-be5e-e6ad11272cd2.JPG)
 
-```
-python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
-```
-![Demo_4](https://user-images.githubusercontent.com/37048080/180059994-e562f53f-6b2f-45b3-9c8f-3aa02f082c57.JPG)
 
 ```
-python yolo_openvino_demo.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
+python yolo_openvino_demo.py -i face-demographics-walking.mp4 -m yolov7.xml
 ```
 On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
 
 https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
 
-
+If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#supported-devices) supported by OpenVINO, run the following command and then compare the inference times-
+```
+python yolo_openvino_demo.py -i road.jpeg -m yolov7.xml -d GPU
+```
