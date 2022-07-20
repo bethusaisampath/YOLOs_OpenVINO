@@ -57,7 +57,7 @@ Then we can get yolov5s.onnx in yolov5-v6.1 folder containing ONNX version of YO
 3. Run the following command to generate the IR of YOLOv5 model(if OpenVINO version >= 2022.1):
 
 ```
-Python C:/Users/Bethu Sai Sampath/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v6.1/yolov5l.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+Python C:/Users/"Bethu Sai Sampath"/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v6.1/yolov5s.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
 ```
 
 If OpenVINO version < 2022.1, run the following command:
