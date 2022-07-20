@@ -1,10 +1,27 @@
-# YOLOv5
-After a few days of the release of the YOLOv4 model on 27 May 2020, YOLOv5 got released by [Glenn Jocher](https://www.linkedin.com/in/glenn-jocher/)(Founder & CEO of Utralytics). It was publicly released on Github [here](https://github.com/ultralytics/yolov5). Glenn introduced the YOLOv5 Pytorch based approach, and Yes! YOLOv5 is written in the Pytorch framework. With the continuous effort and 58 open source contributors, YOLOv5 set the benchmark for object detection models very high, it already beats the [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf) and its other previous YOLO versions.
+# YOLOv7
+Just a few days ago, [YOLOv7](https://github.com/WongKinYiu/yolov7) came into the limelight by beating all the existing object detection models to date. Anyone who has worked in Object detection has heard about YOLOs. It’s been here for a while now, and to date, we have seen a lot of YOLO versions. YOLO is not a single architecture but a flexible research framework written in low-level languages.
+YOLOv7 outperforms all existing state of art object detection models in terms of speed and highest accuracy of 56.8% AP on COCO dataset. Yolo
 
-The largest contribution of YOLOv5 is to translate the Darknet research framework to the PyTorch framework. The Darknet framework is written primarily in C and offers fine grained control over the operations encoded into the network. In many ways the control of the lower level language is a boon to research, but it can make it slower to port in new research insights, as one writes custom gradient calculations with each new addition. Pytotch inferences are very fast that before releasing YOLOv5, many other AI practitioners often translate the YOLOv3 and YOLOv4 weights into Ultralytics Pytorch weight. There is no official YOLOV5 paper released yet and also many controversies are happening about its name.
+## Benchmarks
+In terms of speed and accuracy, YOLOv7 has now surpassed all of the known object detectors like YOLOR, YOLOX, Scaled-YOLOv4, YOLOv5, DETR, Deformable DETR, DINO-5scale-R50, ViT-Adapter-B. Its speed varies from 5 FPS to 160 FPS and has the highest accuracy 56.8% AP. Also runs on 30FPS + on V100 GPU.
 
-# YOLOv5 Inferencing using OpenVINO toolkit
-Now we will see how YOLOv5 model inferencing can be done using Intel OpenVINO toolkit.
+YOLOv7-E6 object detector (56 FPS V100, 55.9% AP) outperforms both transformer-based detector SWINL Cascade-Mask R-CNN by 509% in speed and 2% in accuracy, and convolutional based detector ConvNeXt-XL Cascade-Mask R-CNN (8.6 FPS A100, 55.2% AP) by 551% in speed and 0.7% AP in accuracy.
+
+## Features
+- Several trainable bag-of-freebies methods have greatly improve the detection accuracy without increasing the inference cost.
+- Proposed “extend” and “compound scaling” methods for the real-time object detector that can effectively utilize parameters and computation.
+- Reduced about 40% parameters and 50% computation of state-of-the-art real-time object detector, made faster inference speed and higher detection accuracy.
+- A simple and standard training framework for any detection & instance segmentation tasks, based on [𝐝𝐞𝐭𝐞𝐜𝐭𝐫𝐨𝐧𝟐](https://github.com/facebookresearch/detectron2)
+- Supports [𝐃𝐄𝐓𝐑](https://arxiv.org/pdf/2005.12872.pdf) and many transformer-based detection frameworks out-of-box
+- Supports easy-to-deploy pipeline thought onnx
+- This is the only framework that supports 𝐘𝐎𝐋𝐎𝐯𝟒 + 𝐈𝐧𝐬𝐭𝐚𝐧𝐜𝐞𝐒𝐞𝐠𝐦𝐞𝐧𝐭𝐚𝐭𝐢𝐨𝐧 in single-stage style
+- Easily plugin into transformers-based detector
+- YOLOv7 added instance segmentation to the YOLO arch. Also many transformer backbones, arches included.
+- YOLOv7 will have other versions that will deal with image segmentation and pose estimation. In the github repo of YOLOv7 they show a teaser about YOLOv7-mask and YOLOv7-pose, which would be image segmentation and pose estimation models respectively.
+- YOLOv7 achieves mAP 43, AP-s exceed MaskRCNN by 10 with a convex-tiny backbone while the similar speed with YOLOX-s, more models listed below, it's more accurate and even lighter.
+
+# YOLOv7 Inferencing using OpenVINO toolkit
+Now we will see how YOLOv7 model inferencing can be done using Intel OpenVINO toolkit.
 
 The following components are required-
 
