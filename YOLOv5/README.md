@@ -17,13 +17,14 @@ The following components are required-
 - Netron model visualizer
 
 ## OpenVINO toolkit Installation
-### For OpenVINO version < 2022.1
-1. [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or any other older version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions.
-2. Here Model optimizer comes included in the toolkit.
-
 ### For OpenVINO version >= 2022.1
 1. [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download.html) OpenVINO toolkit 2022.1 or any other recent version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions. Here the OpenVINO development tools are not included in the toolkit, they need to be installed seperately.
 2. From the 2022.1 release, the [OpenVINO Development Tools](https://docs.openvino.ai/2022.1/openvino_docs_install_guides_install_dev_tools.html#doxid-openvino-docs-install-guides-install-dev-tools) (like Model Optimizer, Benchmark Tool, Accuracy Checker & Post-Training Optimization Tool, etc) can only be installed via [PyPI](https://pypi.org/project/openvino-dev/). Download and install the Development Tools Package from PyPI where we use Model optimizer for our YOLOv5 optimization.
+
+
+### For OpenVINO version < 2022.1
+1. [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or any other older version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions.
+2. Here Model optimizer comes included in the toolkit.
 
 ## YOLOv5 inferencing
 ### Windows/Linux :
@@ -129,3 +130,4 @@ benchmark_app -m yolov5-v6.1/yolov5s.xml -i data/images -d CPU -niter 100 -progr
 
 ## [Accuracy Checker Tool](https://docs.openvino.ai/latest/omz_tools_accuracy_checker.html#deep-learning-accuracy-validation-framework)
 The Accuracy Checker is an extensible, flexible and configurable Deep Learning accuracy validation framework. The tool has a modular structure and allows to reproduce validation pipeline and collect aggregated quality indicators for popular datasets both for networks in source frameworks and in the OpenVINO™ supported formats.
+All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
