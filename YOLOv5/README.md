@@ -113,3 +113,11 @@ If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supp
 ```
 python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml -d GPU
 ```
+
+# Performance
+## [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
+This tool estimates deep learning inference performance on supported devices. Performance can be measured for two inference modes: latency and throughput-oriented.
+This tool is already installed when we download & install the OpenVINO Development tools via PyPI.
+This tool is located at this location- C:\Users\Bethu Sai Sampath\openvino_env\Lib\site-packages\openvino\tools\benchmark
+
+## Accuracy Checker
