@@ -128,6 +128,22 @@ If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supp
 python yolo_openvino_demo.py -i road.jpeg -m yolov7.xml -d GPU
 ```
 
+# Performance
+## Speed Test using Intel [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
+This tool estimates deep learning inference performance on supported devices. Performance can be measured for two inference modes: latency and throughput-oriented.
+This tool is already installed when we download & install the OpenVINO Development tools via PyPI.
+All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
+
+Run the following command to run the Benchmark Python tool for estimating the YOLOv7 performance on test images-
+```
+benchmark_app -m yolov7.xml -i inference/images -d CPU -niter 100 -progress
+```
+![Yolov7_Benchmark](https://user-images.githubusercontent.com/37048080/180663882-aa69e7a1-2674-4572-9466-60351bf1df97.JPG)
+
+
+## [Accuracy Checker Tool](https://docs.openvino.ai/latest/omz_tools_accuracy_checker.html#deep-learning-accuracy-validation-framework)
+The Accuracy Checker is an extensible, flexible and configurable Deep Learning accuracy validation framework. The tool has a modular structure and allows to reproduce validation pipeline and collect aggregated quality indicators for popular datasets both for networks in source frameworks and in the OpenVINO™ supported formats.
+All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
 
 
 
