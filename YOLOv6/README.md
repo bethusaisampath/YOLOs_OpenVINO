@@ -58,6 +58,7 @@ wget https://github.com/meituan/YOLOv6/releases/download/0.1.0/yolov6t.pt
 ```
 
 2. Convert Pytorch Weights to ONNX Weights and to Intermediate Representation - 
+The speciality with YOLOV6 is that Meituan team provided python script for directly converting Pytorch weights to OpenVINO IR using Model Optimizer.
 The YOLOv6 repository provides a script export_openvino.py in deploy/OpenVINO to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx and also to generate OpenVINO IR(.xml, .bin and .mapping files). Run the following command to download & convert the latest version of YOLOv6t Pytorch Weights(yolov6t.pt) to ONNX weights & IR:
 
 ```
@@ -121,7 +122,7 @@ python tools/infer.py --weights yolov6t.pt --source test.jpg
 
 
 # Performance
-## Speed Test uisng Intel [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
+## Speed Test using Intel [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
 This tool estimates deep learning inference performance on supported devices. Performance can be measured for two inference modes: latency and throughput-oriented.
 This tool is already installed when we download & install the OpenVINO Development tools via PyPI.
 All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
