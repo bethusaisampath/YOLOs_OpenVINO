@@ -55,51 +55,47 @@ pip install -r requirements.txt
 #### Downloading Pytorch weights and Converting them to ONNX weights
 1. There are various pretrained models to start training from. 
 ![Yolov6](https://user-images.githubusercontent.com/37048080/180662039-95fda16f-82b6-4ff1-89c9-b4ce0e32ed42.JPG)
-
-2. Convert Pytorch Weights to ONNX Weights - The YOLOv6 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights:
-
+Here we use YOLOv6-tiny model for inferencing on OpenVINO. Run the following command to download the YOLOv6t-
 ```
-python export.py  --weights yolov5-v6.1/yolov5s.pt  --img 640 --batch 1
-```
-Then we can get yolov5s.onnx in yolov5-v6.1 folder containing ONNX version of YOLOv5s.
-
-#### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
-1. After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
-2. Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
-![YOLOv5_Output_node](https://user-images.githubusercontent.com/37048080/179829580-f2edd2bc-189c-4d70-9e5f-08819a92e1f8.jpg)
-
-3. Run the following command to generate the IR of YOLOv5 model(if OpenVINO version >= 2022.1):
-
-```
-Python C:/Users/"Bethu Sai Sampath"/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v6.1/yolov5s.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+wget https://github.com/meituan/YOLOv6/releases/download/0.1.0/yolov6t.pt
 ```
 
-If OpenVINO version < 2022.1, run the following command:
-```
-Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov5-v6.1/yolov5s.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
-```
+2. Convert Pytorch Weights to ONNX Weights and to Intermediate Representation - 
+The YOLOv6 repository provides a script export_openvino.py in deploy/OpenVINO to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx and also to generate OpenVINO IR(.xml, .bin and .mapping files). Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights & IR:
 
-Where --input_model defines the pre-trained model, the parameter --model_name is name of the network in generated IR and output .xml/.bin files, -s represents that all input values coming from original network inputs will be divided by this value, --reverse_input_channels is used to switch the input channels order from RGB to BGR (or vice versa), --output represents the name of the output operation of the model. 
-After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v6.1.
-
-4. The result of the optimization process is an IR model. The model is split into two files - model.xml(XML file containing the network architecture) & 
-model.bin (binary file contains the weights and biases)
-#### YOLOv5 Inference Demo
-
-1. After we generate the IR of YOLOv5 model, use the Python demo(yolo_openvino_demo.py script) for inferencing process of YOLOv5 model.
-2. Download some images/videos and object classes for inferencing. Run the following commands one after the other-
 ```
+python deploy/OpenVINO/export_openvino.py --weights yolov6s.pt --img 640 --batch 1
+```
+Then we can get yolov6t.onnx in the original location and IR files in yolov6t_openvino folder.
+
+#### YOLOv6 Inference Demo
+
+1. After we download the pretrained YOLOv6t model, use the foloowing command for inferencing images on YOLOv6t model.
+2. Run the following commands -
+```
+wget -O test.jpg https://i.imgur.com/1IWZX69.jpg
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
-wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
-wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
-wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic1.jpg
-wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2.jpg
-wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolo_openvino_demo.py
+wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2.jpgpy
 ```
-The inference Python script can be found at [yolo_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolo_openvino_demo.py)
+```
+python tools/infer.py --weights yolov6t.pt --source <path to image/directory>
+```
+- Output will be saved at runs/inference/exp by default
+--weights    : Model path for inference
+--source     : Image file/Image path
+--yaml       : Yaml file for data
+--img-size   : Image size (h,w) for inference size
+--conf-thres : confidence threshold for inference
+--iou-thres  : NMS iou thresold for inference
+--max-det    : maximum inference per image
+--device     : device to run model like 0,1,2,3 or cpu
+--save-txt   : save results to *.txt
+--save-img   : save visualized inference results
+--classes    : filter by classes 
+--project    : save inference results to project/name
 
-3. Run the following commands for Inferencing-
+3. Demos-
 ```
 python yolo_openvino_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
 ```
