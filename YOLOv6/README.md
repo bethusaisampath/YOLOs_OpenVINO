@@ -81,48 +81,47 @@ wget https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/traffic2
 ```
 python tools/infer.py --weights yolov6t.pt --source <path to image/directory>
 ```
-- Output will be saved at runs/inference/exp by default
+Output will be saved at runs/inference/exp by default
+
 --weights    : Model path for inference
+
 --source     : Image file/Image path
+
 --yaml       : Yaml file for data
+
 --img-size   : Image size (h,w) for inference size
+
 --conf-thres : confidence threshold for inference
+
 --iou-thres  : NMS iou thresold for inference
+
 --max-det    : maximum inference per image
+
 --device     : device to run model like 0,1,2,3 or cpu
+
 --save-txt   : save results to *.txt
+
 --save-img   : save visualized inference results
+
 --classes    : filter by classes 
+
 --project    : save inference results to project/name
 
 3. Demos-
 ```
-python yolo_openvino_demo.py -i data/images/bus.jpg -m yolov5-v6.1/yolov5s.xml
+python tools/infer.py --weights yolov6t.pt --source data/images
 ```
-![Demo_1](https://user-images.githubusercontent.com/37048080/180057938-5f60a73a-e0fc-432d-9841-a2e9bd9e5966.JPG)
+![image1](https://user-images.githubusercontent.com/37048080/180662698-c4541bec-b98c-4e7d-b141-576733c8ef03.jpg)
+
+![image2](https://user-images.githubusercontent.com/37048080/180662701-bb7e7d2c-e012-4670-ac1b-a53b29f47193.jpg)
+
+![image3](https://user-images.githubusercontent.com/37048080/180662704-e8339170-9e3b-4597-89ba-552d4aff1251.jpg)
 
 ```
-python yolo_openvino_demo.py -i data/images/zidane.jpg -m yolov5-v6.1/yolov5s.xml
+python tools/infer.py --weights yolov6t.pt --source test.jpg
 ```
-![Demo_2](https://user-images.githubusercontent.com/37048080/180057962-fc23db43-a90f-4500-a855-5b4e8514fce7.JPG)
+![test](https://user-images.githubusercontent.com/37048080/180662767-87998b57-d439-4e3b-a480-415a034080c3.jpg)
 
-```
-python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml
-```
-![Demo_4](https://user-images.githubusercontent.com/37048080/180059994-e562f53f-6b2f-45b3-9c8f-3aa02f082c57.JPG)
-
-```
-python yolo_openvino_demo.py -i face-demographics-walking.mp4 -m yolov5-v6.1/yolov5s.xml
-```
-On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
-
-https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
-
-
-If you have Intel [GPU](https://docs.openvino.ai/latest/openvino_docs_OV_UG_supported_plugins_Supported_Devices.html#supported-devices) supported by OpenVINO, run the following command and then compare the inference times-
-```
-python yolo_openvino_demo.py -i traffic2.jpg -m yolov5-v6.1/yolov5s.xml -d GPU
-```
 
 # Performance
 ## [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
