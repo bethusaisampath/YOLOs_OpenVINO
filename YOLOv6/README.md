@@ -124,16 +124,16 @@ python tools/infer.py --weights yolov6t.pt --source test.jpg
 
 
 # Performance
-## [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
+## Speed Test uisng Intel [Benchmark Tool](https://docs.openvino.ai/latest/openvino_inference_engine_tools_benchmark_tool_README.html#benchmark-python-tool)
 This tool estimates deep learning inference performance on supported devices. Performance can be measured for two inference modes: latency and throughput-oriented.
 This tool is already installed when we download & install the OpenVINO Development tools via PyPI.
 All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
 
-Run the following command to run the Benchmark Python tool for estimating the YOLOv5s performance on test images-
+Run the following command to run the Benchmark Python tool for estimating the YOLOv6t performance on test images-
 ```
-benchmark_app -m yolov5-v6.1/yolov5s.xml -i data/images -d CPU -niter 100 -progress
+benchmark_app -m yolov6t_openvino/yolov6t.xml -i data/images -d CPU -niter 100 -progress
 ```
-![Benchmark_tool](https://user-images.githubusercontent.com/37048080/180296321-0da20329-b6c0-46f5-ae19-97a1d05d9796.JPG)
+![Yolov6_Benchmark](https://user-images.githubusercontent.com/37048080/180663564-af862067-c0c6-4393-bcc6-a008906f135b.JPG)
 
 
 ## [Accuracy Checker Tool](https://docs.openvino.ai/latest/omz_tools_accuracy_checker.html#deep-learning-accuracy-validation-framework)
