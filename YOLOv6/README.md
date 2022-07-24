@@ -9,12 +9,9 @@ Unlike YOLOv5/YOLOX, which are based on CSPNet and use a multi-branch approach a
 Further, the researchers at Meituan adopted the decoupled head structure, taking into account the balance between the representation ability of the operators and the computing overhead on the hardware. They used a hybrid strategy to redesign a more efficient decoupling head structure. The team observed that with this strategy, they were able to increase the accuracy by 0.2 per cent and speed by 6.8 per cent.
 
 In terms of training, Meituan adopted three strategies:
-
-Anchor-free paradigm: This strategy has been widely used in recent years due to its strong generalisation ability and simple code logic. Compared to other methods, the team found that the Anchor-free detector had a 51 per cent improvement in speed.
-
-SimOTA Tag Assignment Policy: To obtain high-quality positive samples, the team used the SimOTA algorithm that dynamically allocates positive samples to improve detection accuracy.
-
-SIoU bounding box regression loss: YOLOv6 adopts the SIoU bounding box regression loss function to supervise the learning of the network. The SIoU loss function redefines the distance loss by introducing a vector angle between required regression. This improves the regression accuracy, resulting in improved detection accuracy.
+- Anchor-free paradigm: This strategy has been widely used in recent years due to its strong generalisation ability and simple code logic. Compared to other methods, the team found that the Anchor-free detector had a 51 per cent improvement in speed.
+- SimOTA Tag Assignment Policy: To obtain high-quality positive samples, the team used the SimOTA algorithm that dynamically allocates positive samples to improve detection accuracy.
+- SIoU bounding box regression loss: YOLOv6 adopts the SIoU bounding box regression loss function to supervise the learning of the network. The SIoU loss function redefines the distance loss by introducing a vector angle between required regression. This improves the regression accuracy, resulting in improved detection accuracy.
 
 # YOLOv6 Inferencing using OpenVINO
 Now we will see how YOLOv6 model inferencing can be done using Intel OpenVINO toolkit.
