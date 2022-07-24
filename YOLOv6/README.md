@@ -1,10 +1,11 @@
-# YOLOv5
-After a few days of the release of the YOLOv4 model on 27 May 2020, YOLOv5 got released by [Glenn Jocher](https://www.linkedin.com/in/glenn-jocher/)(Founder & CEO of Utralytics). It was publicly released on Github [here](https://github.com/ultralytics/yolov5). Glenn introduced the YOLOv5 Pytorch based approach, and Yes! YOLOv5 is written in the Pytorch framework. With the continuous effort and 58 open source contributors, YOLOv5 set the benchmark for object detection models very high, it already beats the [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf) and its other previous YOLO versions.
+# YOLOv6
+[YOLOv6](https://github.com/meituan/YOLOv6) was recently introduced by Chinese company Meituan. It is not part of the official YOLO series but was named so since the authors of this architecture were heavily inspired by the original one-stage YOLO.  Meituan is a large e-commerce company in China, and their technical team is akin to what we might think of in the United States when we think about Amazon Research. Though it provides outstanding results, it’s important to note that MT-YOLOv6 is not part of the official YOLO series. As of now, This name is not official and still in progress about the naming of YOLOv6. 
 
-The largest contribution of YOLOv5 is to translate the Darknet research framework to the PyTorch framework. The Darknet framework is written primarily in C and offers fine grained control over the operations encoded into the network. In many ways the control of the lower level language is a boon to research, but it can make it slower to port in new research insights, as one writes custom gradient calculations with each new addition. Pytotch inferences are very fast that before releasing YOLOv5, many other AI practitioners often translate the YOLOv3 and YOLOv4 weights into Ultralytics Pytorch weight. There is no official YOLOV5 paper released yet and also many controversies are happening about its name.
+YOLOv6 is a target detection framework dedicated to industrial applications. As per the company’s release, the most used YOLO detection frameworks – YOLOv5, YOLOX, and PP-YOLOE – leave a lot of room for improvement in terms of speed and accuracy. Recognising these ‘flaws,’ Meituan has introduced MT-YOLOv6 by studying and drawing further on the existing technologies in the industry. The MT-YOLOv6 framework supports the entire chain of industrial applications requirements like model training, inference, and multiplatform deployment. According to the team, MT-YOLOv6 has carried out improvements and optimisations at the algorithmic level, like training strategies and network structure, and has displayed impressive results in terms of accuracy and speed when tested on COCO datasets.
+YOLOv6 is a single-stage object detection framework dedicated to industrial applications, with hardware-friendly efficient design and high performance. It outperforms YOLOv5 in detection accuracy and inference speed, making it the best OS version of YOLO architecture for production applications.
 
-# YOLOv5 Inferencing using OpenVINO toolkit
-Now we will see how YOLOv5 model inferencing can be done using Intel OpenVINO toolkit.
+# YOLOv6 Inferencing using OpenVINO
+Now we will see how YOLOv6 model inferencing can be done using Intel OpenVINO toolkit.
 
 The following components are required-
 
@@ -26,10 +27,10 @@ The following components are required-
 1. [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or any other older version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions.
 2. Here Model optimizer comes included in the toolkit.
 
-## YOLOv5 inferencing
+## YOLOv6 inferencing
 ### Windows/Linux :
-#### Clone the YOLOv5 repository from Github
-1. Clone the latest YOLOv5 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv5 release.
+#### Clone the YOLOv6 repository from Github
+1. Clone the latest YOLOv6 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv6 release.
 Running the following commands(one after the other) in the terminal of Windows/Linux-
 ```
 git clone https://github.com/ultralytics/yolov5
