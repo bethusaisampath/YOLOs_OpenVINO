@@ -52,12 +52,13 @@ pip install -r requirements.txt
 #### Downloading Pytorch weights and Converting them to ONNX weights
 1. There are various pretrained models to start training from. 
 ![Yolov6](https://user-images.githubusercontent.com/37048080/180662039-95fda16f-82b6-4ff1-89c9-b4ce0e32ed42.JPG)
-Here we use YOLOv6-tiny model for inferencing on OpenVINO. Run the following command to download the YOLOv6t-
+Here we use YOLOv6-tiny model for inferencing on OpenVINO. Run the following command to download the YOLOv6t pytorch weights-
 ```
 wget https://github.com/meituan/YOLOv6/releases/download/0.1.0/yolov6t.pt
 ```
 
 2. Convert Pytorch Weights to ONNX Weights and to Intermediate Representation - 
+
 The speciality with YOLOV6 is that Meituan team provided python script for directly converting Pytorch weights to OpenVINO IR using Model Optimizer.
 The YOLOv6 repository provides a script export_openvino.py in deploy/OpenVINO to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx and also to generate OpenVINO IR(.xml, .bin and .mapping files). Run the following command to download & convert the latest version of YOLOv6t Pytorch Weights(yolov6t.pt) to ONNX weights & IR:
 
