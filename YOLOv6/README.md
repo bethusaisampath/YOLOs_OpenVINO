@@ -61,7 +61,7 @@ wget https://github.com/meituan/YOLOv6/releases/download/0.1.0/yolov6t.pt
 ```
 
 2. Convert Pytorch Weights to ONNX Weights and to Intermediate Representation - 
-The YOLOv6 repository provides a script export_openvino.py in deploy/OpenVINO to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx and also to generate OpenVINO IR(.xml, .bin and .mapping files). Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights & IR:
+The YOLOv6 repository provides a script export_openvino.py in deploy/OpenVINO to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx and also to generate OpenVINO IR(.xml, .bin and .mapping files). Run the following command to download & convert the latest version of YOLOv6t Pytorch Weights(yolov6t.pt) to ONNX weights & IR:
 
 ```
 python deploy/OpenVINO/export_openvino.py --weights yolov6s.pt --img 640 --batch 1
