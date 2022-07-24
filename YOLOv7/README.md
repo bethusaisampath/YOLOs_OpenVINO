@@ -98,6 +98,7 @@ wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/r
 wget -O fruit-vegetable-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/fruit-and-vegetable-detection.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 wget -O road.jpeg https://miro.medium.com/max/1400/1*v0Bm-HQxWtpbQ0Yq463uqw.jpeg
+wget -O test.jpg https://i.imgur.com/1IWZX69.jpg
 wget https://raw.githubusercontent.com/bethusaisampath/YOLOs_OpenVINO/main/YOLOv5/yolo_openvino_demo.py
 ```
 The inference Python script can be found at [yolo_openvino_demo.py](https://github.com/bethusaisampath/YOLOs_OpenVINO/blob/main/YOLOv5/yolo_openvino_demo.py)
