@@ -42,21 +42,21 @@ The following components are required-
 ## YOLOv6 inferencing
 ### Windows/Linux :
 #### Clone the YOLOv6 repository from Github
-1. Clone the latest YOLOv6 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv6 release.
+1. Clone the latest YOLOv6 [repository](https://github.com/meituan/YOLOv6) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv6 release.
 Running the following commands(one after the other) in the terminal of Windows/Linux-
 ```
-git clone https://github.com/ultralytics/yolov5
-cd yolov5
+git clone https://github.com/meituan/YOLOv6
+cd YOLOv6
 pip install -r requirements.txt
 ```
 
 2. For Windows OS - Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location. Skip this step incase of Linux.
 
 #### Downloading Pytorch weights and Converting them to ONNX weights
-1. There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
-![YOLOv5 pretrained models](https://user-images.githubusercontent.com/37048080/179829729-3eb55365-fbee-40e1-b4e7-48c22206d2b7.png)
+1. There are various pretrained models to start training from. 
+![Yolov6](https://user-images.githubusercontent.com/37048080/180662039-95fda16f-82b6-4ff1-89c9-b4ce0e32ed42.JPG)
 
-2. Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights:
+2. Convert Pytorch Weights to ONNX Weights - The YOLOv6 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command to download & convert the latest version of YOLOv5s Pytorch Weights(yolov5s.pt) to ONNX weights:
 
 ```
 python export.py  --weights yolov5-v6.1/yolov5s.pt  --img 640 --batch 1
