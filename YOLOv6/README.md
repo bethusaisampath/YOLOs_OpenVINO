@@ -139,3 +139,6 @@ benchmark_app -m yolov5-v6.1/yolov5s.xml -i data/images -d CPU -niter 100 -progr
 ## [Accuracy Checker Tool](https://docs.openvino.ai/latest/omz_tools_accuracy_checker.html#deep-learning-accuracy-validation-framework)
 The Accuracy Checker is an extensible, flexible and configurable Deep Learning accuracy validation framework. The tool has a modular structure and allows to reproduce validation pipeline and collect aggregated quality indicators for popular datasets both for networks in source frameworks and in the OpenVINO™ supported formats.
 All the development tools are located here- C:\Users\xxxxx\openvino_env\Lib\site-packages\openvino\tools
+
+# Conclusion
+As a new repository, YOLOv6 is slightly harder to wield in practice than YOLOv5 and does not have as many established pathways and articles around using the network in practice for training, deployment and debugging - something that may change with time.
