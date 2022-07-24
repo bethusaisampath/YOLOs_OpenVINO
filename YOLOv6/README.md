@@ -4,6 +4,18 @@
 YOLOv6 is a target detection framework dedicated to industrial applications. As per the company’s release, the most used YOLO detection frameworks – YOLOv5, YOLOX, and PP-YOLOE – leave a lot of room for improvement in terms of speed and accuracy. Recognising these ‘flaws,’ Meituan has introduced MT-YOLOv6 by studying and drawing further on the existing technologies in the industry. The MT-YOLOv6 framework supports the entire chain of industrial applications requirements like model training, inference, and multiplatform deployment. According to the team, MT-YOLOv6 has carried out improvements and optimisations at the algorithmic level, like training strategies and network structure, and has displayed impressive results in terms of accuracy and speed when tested on COCO datasets.
 YOLOv6 is a single-stage object detection framework dedicated to industrial applications, with hardware-friendly efficient design and high performance. It outperforms YOLOv5 in detection accuracy and inference speed, making it the best OS version of YOLO architecture for production applications.
 
+Unlike YOLOv5/YOLOX, which are based on CSPNet and use a multi-branch approach and residual structure, Meituan redesigned the Backbone and Neck according to the idea of hardware-aware neural network design. As per the team, this helps in overcoming the challenges of latency and bandwidth utilisation. The idea is based on the characteristics of hardware and that of inference/compilation framework. Meituan introduced two redesigned detection components – EfficientRep Backbone and Rep-PAN Neck.
+
+Further, the researchers at Meituan adopted the decoupled head structure, taking into account the balance between the representation ability of the operators and the computing overhead on the hardware. They used a hybrid strategy to redesign a more efficient decoupling head structure. The team observed that with this strategy, they were able to increase the accuracy by 0.2 per cent and speed by 6.8 per cent.
+
+In terms of training, Meituan adopted three strategies:
+
+Anchor-free paradigm: This strategy has been widely used in recent years due to its strong generalisation ability and simple code logic. Compared to other methods, the team found that the Anchor-free detector had a 51 per cent improvement in speed.
+
+SimOTA Tag Assignment Policy: To obtain high-quality positive samples, the team used the SimOTA algorithm that dynamically allocates positive samples to improve detection accuracy.
+
+SIoU bounding box regression loss: YOLOv6 adopts the SIoU bounding box regression loss function to supervise the learning of the network. The SIoU loss function redefines the distance loss by introducing a vector angle between required regression. This improves the regression accuracy, resulting in improved detection accuracy.
+
 # YOLOv6 Inferencing using OpenVINO
 Now we will see how YOLOv6 model inferencing can be done using Intel OpenVINO toolkit.
 
