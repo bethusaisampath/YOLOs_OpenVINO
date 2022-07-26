@@ -1,5 +1,5 @@
 # Disclaimer
-This is not officially tested by Intel OpenVINO team. For experimental/research purposes only.
+This is not officially tested by Intel OpenVINO. For experimental/research purposes only.
 
 # YOLOv5
 After a few days of the release of the YOLOv4 model on 27 May 2020, YOLOv5 got released by [Glenn Jocher](https://www.linkedin.com/in/glenn-jocher/)(Founder & CEO of Utralytics). It was publicly released on Github [here](https://github.com/ultralytics/yolov5). Glenn introduced the YOLOv5 Pytorch based approach, and Yes! YOLOv5 is written in the Pytorch framework. With the continuous effort and 58 open source contributors, YOLOv5 set the benchmark for object detection models very high, it already beats the [EfficientDet](https://arxiv.org/pdf/1911.09070.pdf) and its other previous YOLO versions.
