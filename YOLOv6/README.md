@@ -1,3 +1,6 @@
+# Disclaimer
+This is not officially tested by Intel OpenVINO team. For experimental/research purposes only.
+
 # YOLOv6
 [YOLOv6](https://github.com/meituan/YOLOv6) was recently introduced by Chinese company Meituan. It is not part of the official YOLO series but was named so since the authors of this architecture were heavily inspired by the original one-stage YOLO.  Meituan is a large e-commerce company in China, and their technical team is akin to what we might think of in the United States when we think about Amazon Research.
 
