@@ -10,3 +10,6 @@ The YOLO network consists of three main pieces-
 
 ## OpenVINO
 The Intel distribution of the OpenVINO toolkit is a free to download set of Python and C++ scripts that are used to optimize, tune, and improve the inference of AI models. The toolkit also includes the Intel Open Model Zoo, which contains numerous pre-trained and pre-optimized models ready to be used. Here we will see how latest YOLOs (Yolov5, v6 and v7) models can be inferenced using Intel OpenVINO toolkit.
+
+# Disclaimer
+This is not officially tested by Intel OpenVINO. For experimental/research purposes only.
