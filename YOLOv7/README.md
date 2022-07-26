@@ -1,3 +1,6 @@
+# Disclaimer
+This is not officially tested by Intel OpenVINO. For experimental/research purposes only.
+
 # YOLOv7
 Just a few days ago, [YOLOv7](https://github.com/WongKinYiu/yolov7) came into the limelight by beating all the existing object detection models to date. Anyone who has worked in Object detection has heard about YOLOs. It’s been here for a while now, and to date, we have seen a lot of YOLO versions. YOLO is not a single architecture but a flexible research framework written in low-level languages.
 YOLOv7 outperforms all existing state of art object detection models in terms of speed and highest accuracy of 56.8% AP on COCO dataset. Yolo
